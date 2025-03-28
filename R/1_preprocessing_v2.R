@@ -25,7 +25,6 @@ for (gsm in geo_ids) {
 gz_files <- list.files("data", pattern = "\\.gz$", full.names = TRUE)
 sapply(gz_files, gunzip, remove = TRUE)
 
-
 # Preprocessing
 rgset <- read.metharray.exp(base = "example_data", force = TRUE, extended = TRUE)
 sampleNames(rgset) <- sub(".*_(\\d+_R\\d+C\\d+)$", "\\1", sampleNames(rgset))
