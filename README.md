@@ -4,6 +4,7 @@ This repository provides an R-based framework for performing **in silico purific
 
 Methylation-based classifiers rely on the tumor-specific signal within a sample. In low-purity tumors, this signal may be diluted by non-malignant cell contributions, leading to non-classifiable results. Here, we systematically subtract reference methylation profiles of sorted non-malignant cell types from tumor profiles across a range of proportions. All adjusted profiles are classified individually, and the most confident result is retained.
 
+## Overview
 This pipeline includes:
 - Preprocessing of raw methylation data
 - Fractional removal of cell-type-specific methylation signatures
