@@ -11,19 +11,19 @@ plot_mc  <- TRUE
 colors <- readRDS(file.path("data", "colors_pur.RDS"))
 
 # General plotting function
-plot_prob_matrix <- function(prob_matrix, color_vector, output_suffix) {
-  prob_matrix <- as.data.frame(prob_matrix)
-  prob_matrix$sample             <- sub("^[^_]*_[^_]*_(.*)$",  "\\1", rownames(prob_matrix))
-  prob_matrix$subtracted_percent <- sub("^[^_]*_(.*?)_.*$",    "\\1", rownames(prob_matrix))
-  prob_matrix$cell_type          <- sub("^(.*?)_.*$",           "\\1", rownames(prob_matrix))
+plot_prob <- function(prob, color_vector, output_suffix) {
+  prob <- as.data.frame(prob)
+  prob$sample             <- sub("^[^_]*_[^_]*_(.*)$",  "\\1", rownames(prob))
+  prob$subtracted_percent <- sub("^[^_]*_(.*?)_.*$",    "\\1", rownames(prob))
+  prob$cell_type          <- sub("^(.*?)_.*$",           "\\1", rownames(prob))
   
   keep_cols <- c("sample", "subtracted_percent", "cell_type")
   df_long <- reshape(
-    data      = prob_matrix,
-    varying   = setdiff(names(prob_matrix), keep_cols),
+    data      = prob,
+    varying   = setdiff(names(prob), keep_cols),
     v.names   = "Probability",
     timevar   = "Outcome",
-    times     = setdiff(names(prob_matrix), keep_cols),
+    times     = setdiff(names(prob), keep_cols),
     direction = "long"
   )
   
@@ -120,11 +120,11 @@ plot_prob_matrix <- function(prob_matrix, color_vector, output_suffix) {
 
 # Generate plots
 if (plot_mcf) {
-  prob_matrix_mcf <- readRDS(file.path("results", "prob_matrix_mcf.RDS"))
-  plot_prob_matrix(prob_matrix_mcf, colors, "mcf")
+  prob_mcf <- readRDS(file.path("results", "prob_mcf.RDS"))
+  plot_prob(prob_mcf, colors, "mcf")
 }
 
 if (plot_mc) {
-  prob_matrix <- readRDS(file.path("results", "prob_matrix.RDS"))
-  plot_prob_matrix(prob_matrix, colors, "mc")
+  prob <- readRDS(file.path("results", "prob.RDS"))
+  plot_prob(prob, colors, "mc")
 }
