@@ -105,7 +105,7 @@ res_max <- do.call(rbind, lapply(unique(results$idat), function(id) {
 # Identify the most confident classification per sample–cell type combination
 res_max_ct <- do.call(rbind, lapply(unique(results$idat), function(id) {
   do.call(rbind, lapply(unique(results$cell_type), function(cell_type) {
-    r <- results[results$idat == id & results$ct == cell_type, ]
+    r <- results[results$idat == id & results$cell_type == cell_type, ]
     if (nrow(r) == 0) return(NULL)
     r[which.max(r$mcf_score), ]
   }))
