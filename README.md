@@ -1,26 +1,23 @@
-# purify
-in silico purification
-# 🧬 In Silico Purification of Tumor Methylation Profiles
+# In Silico Purification for Methylation-Based Tumor Classification
 
-This repository provides the code and framework for performing **in silico purification** of tumor DNA methylation profiles by computationally removing non-malignant cell-type signatures. The goal is to improve the classification of low-purity pediatric CNS tumors using the **Heidelberg Brain Tumor Classifier** (Capper et al., 2018).
+This repository provides an R-based framework for performing **in silico purification** of tumor DNA methylation profiles by computationally removing non-malignant cell-type signatures. This approach is designed to enhance the performance of methylation-based classifiers, such as the **Heidelberg Brain Tumor Classifier**, especially in samples with low tumor purity.
 
----
+While developed for pediatric brain tumors, the approach is broadly applicable and classifier-agnostic.
 
-## 📌 Overview
+## Overview
 
-> 💡 This approach is **model-agnostic** and could be adapted for any methylation-based classifier.  
-> In this project, we use the Heidelberg Classifier v11b4 to assess classification improvements following computational purification.
+Methylation-based classifiers rely on the tumor-specific signal within a sample. In low-purity tumors, this signal may be diluted by immune or stromal cell contributions, leading to ambiguous or non-classifiable results. Here, we systematically subtract reference methylation profiles of sorted non-malignant cell types from tumor profiles across a range of proportions. All adjusted profiles are classified individually, and the most confident result is retained.
 
----
+This pipeline includes:
+- Fractional subtraction of cell-type-specific methylation signatures
+- Reclassification of all adjusted profiles
+- Summary outputs per sample and per cell type
+- Visualization of classification confidence across purifications
 
-## 🚀 Workflow
+## Installation
 
-1. **Input**: Preprocessed beta value matrix and reference cell-type methylation signatures
-2. **Purification**: Subtraction of cell-type-specific methylation profiles across a range of proportions
-3. **Classification**: Use of the Heidelberg Classifier to evaluate adjusted profiles
-4. **Result Aggregation**: Selection of the most confident classification per sample or per sample–cell-type combination
-5. **Visualization**: Barplots of classification scores across purification levels
+Clone the repository:
 
----
-
-## 📁 Repository Structure
+```bash
+git clone https://github.com/livjuergensen/in-silico-purification.git
+cd in-silico-purification
