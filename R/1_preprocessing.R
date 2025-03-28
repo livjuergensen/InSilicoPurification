@@ -28,7 +28,7 @@ sapply(gz_files, gunzip, remove = TRUE)
 source("/path/to/function/MNPprocessIDAT_functions.R")
 rgset <- read.metharray.exp(base = "example_data", force = TRUE, extended = TRUE)
 sampleNames(rgset) <- sub(".*_(\\d+_R\\d+C\\d+)$", "\\1", sampleNames(rgset))
-mset <- preprocessIllumina(rgset, bg.correct = TRUE, normalize = "controls")
+mset  <- MNPpreprocessIllumina(rgset, bg.correct = TRUE, normalize = "controls")
 beta  <- getBeta(mset, type = "Illumina")
 
 # Save beta values
