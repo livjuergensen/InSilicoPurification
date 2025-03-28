@@ -15,7 +15,7 @@ library(glmnet)
 # When using the Heidelberg Classifier, you'll need: 
 # rf.pred, calfit, cgroups, reflist
 load("/path/to/your/classifier/rfpred.v11b4.RData")
-source("/path/to/your/classifier/mnp.v11b4/R/MNPpredict_betas.R")
+source("/path/to/your/classifier/R/MNPpredict_betas.R")
 
 # Load beta values (from 01_preprocessing or your own data)
 beta <- readRDS(file.path("results", "beta_values.rds"))
