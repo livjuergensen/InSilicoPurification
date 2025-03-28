@@ -1,2 +1,2 @@
-# test
+# purify
 in silico purification
