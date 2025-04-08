@@ -8,7 +8,7 @@ dir.create("plots")
 plot_mcf <- TRUE
 plot_mc  <- TRUE
 
-colors <- readRDS(file.path("data", "colors_pur.RDS"))
+colors <- readRDS(file.path("data", "colors_pur.rds"))
 
 # General plotting function
 plot_prob <- function(prob, color_vector, output_suffix) {
