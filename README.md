@@ -5,7 +5,7 @@ This repository accompanies our manuscript, *"In silico purification improves DN
 ## Background
 DNA methylation-based classification has transformed diagnostics for CNS tumors, but many samples remain non-classifiable due to low tumor purity and infiltration by non-malignant cells. This repository provides an R-based framework for in silico purification, enabling confident classification by computationally removing epigenetic signals from non-malignant cells (e.g., neurons, immune cells). The method systematically subtracts reference methylation signatures of sorted non-malignant cell types from tumor profiles at varying proportions. Each adjusted profile is classified individually, and the most confident result is retained.
 
-While developed for pediatric low-grade gliomas (pLGGs) and demonstrated here using the Heidelberg Classifier v11b4 (Capper et al., 2018), the approach is flexible and broadly applicable, regardless of tumor type, classifier, or reference signatures.
+While developed for pediatric low-grade gliomas and demonstrated here using the Heidelberg Classifier v11b4 (Capper et al., 2018), the approach is flexible and broadly applicable, regardless of tumor type, classifier, or reference signatures.
 
 
 ## Repository Overview & Usage Instructions
