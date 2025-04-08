@@ -22,4 +22,4 @@ mset <- MNPpreprocessIllumina(rgset, bg.correct = TRUE, normalize = "controls")
 
 beta <- getBeta(mset, type = "Illumina")
 
-saveRDS(beta, file.path("results", "beta_values.rds"))
+saveRDS(beta, file.path("results", "beta_values.RDS"))
