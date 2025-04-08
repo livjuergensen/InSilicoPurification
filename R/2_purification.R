@@ -18,7 +18,7 @@ load("/path/to/your/classifier/rfpred.v11b4.RData")
 source("/path/to/your/classifier/R/MNPpredict_betas.R")
 
 # Load beta values (from 01_preprocessing or your own data)
-beta <- readRDS(file.path("results", "beta_values.rds"))
+beta <- readRDS(file.path("results", "beta_values.RDS"))
 beta_proc <- as.data.frame(beta[rownames(rf.pred$importance), ])
 colnames(beta_proc) <- colnames(beta)
 
