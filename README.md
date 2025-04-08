@@ -22,7 +22,7 @@ While developed for pediatric low-grade gliomas and demonstrated here using the 
 - **Functions:** The workflow uses MNPpreprocessIllumina and MNPpredict_betas for preprocessing and prediction (Capper et al., 2018). If these functions are not available, equivalent alternatives (e.g., minfi::preprocessIllumina, custom predict functions) can be used.
 
 ### Set up & Installations
-Install required R packages if not already installed. 
+Install required packages if not already installed. 
 ```R
 install.packages("BiocManager")
 BiocManager::install("minfi")
