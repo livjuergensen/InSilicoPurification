@@ -19,9 +19,9 @@ While developed for pediatric low-grade gliomas and demonstrated here using the 
 ### Requirements
 - **Classifier:** A classifier is required to run this framework. The workflow is set up for the Heidelberg classifier v11b4 but can be easily adapted to work with any other methylation-based tumor classifier.
 
-- **Functions:** The workflow uses MNPpreprocessIllumina and MNPpredict_betas for preprocessing and prediction (Capper et al., 2018). If these functions are not available, equivalent alternatives (e.g., minfi::preprocessIllumina, custom predict functions) can be used.
+- **Functions:** The workflow uses `MNPpreprocessIllumina` and `MNPpredict_betas` for preprocessing and prediction (Capper et al., 2018). If these functions are not available, equivalent alternatives (e.g., `minfi::preprocessIllumina`, custom predict functions) can be used.
 
-### Set up & Installations
+### Setup
 Install required packages if not already installed. 
 ```R
 install.packages("BiocManager")
