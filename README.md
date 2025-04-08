@@ -56,18 +56,10 @@ Subtracts non-malignant reference signatures in increments (default: 0 to 0.98 i
 ```
 Generates stacked bar plots of calibrated classification probabilities (y-axis) across subtraction fractions (x-axis), grouped by reference cell type.
 
-### Interpretation of Results
+### Customization
+- **Reference signatures:** Expand or replace `ref.csv` with custom cell-type profiles.
+- **Classifier:**  Any methylation-based classifier can be used. Replace the Heidelberg Classifier loading and probability calculation steps with your own routine.
+- **Fraction grid:** Adjust `seq(0, 0.98, 0.02)`.
 
 
-
-
-## Citation & Contact
-
-
-
-
-
-
-Repository Overview 
-Included Resources
-
+## Citation
