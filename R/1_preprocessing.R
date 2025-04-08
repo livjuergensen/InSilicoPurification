@@ -23,8 +23,3 @@ mset <- MNPpreprocessIllumina(rgset, bg.correct = TRUE, normalize = "controls")
 beta <- getBeta(mset, type = "Illumina")
 
 saveRDS(beta, file.path("results", "beta_values.rds"))
-
-
-# Questions:
-# Can I upload 3 example samples from the Sturm dataset to the github repo when citing their study?
-# Would it be okay to show the MNPpreprocessIllumina functions?
