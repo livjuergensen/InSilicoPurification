@@ -97,7 +97,7 @@ results$classifiable <- with(results, mcf_score >= 0.9 & mc_score >= 0.5)
 # Identify the most confident classification per sample across all adjusted profiles
 res_max <- do.call(rbind, lapply(unique(results$idat), function(id) {
   r <- results[results$idat == id, ]
-  best <- r[which.max(r$mc_score), ]
+  best <- r[which.max(r$mcf_score), ]
   best$cell_type <- ifelse(best$fraction_removed == 0, "n.a.", best$cell_type)
   best
 }))
